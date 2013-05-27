@@ -29,7 +29,7 @@ ifeq ($(UNAME), Darwin)  # Mac OS X
 # OpenGL and GLUT are frameworks, override LDFLAGS above
 LDFLAGS = -framework OpenGL -framework GLUT
 # Universal binary support
-CFLAGS  += -arch ppc -arch i386
+CFLAGS  += -arch x86_64
 endif
 ifeq ($(UNAME), CYGWIN_NT-5.1)  # Cygwin
 # OpenGL and GLUT libs are named differently, override LDFLAGS above
