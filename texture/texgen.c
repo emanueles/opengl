@@ -1,6 +1,6 @@
 /* Automatic Texture-Coordinate Generation: texgen.c
 based on Red Book, 6th edition, page 435
-** cc -o texgen texgen.c -lGLU -lGL -lXext -lX11 -lm
+** cc -o texgen texgen.c -lGLU -lGL -lglut -lXext -lX11 -lm
 ** On a Mac:
 ** cc -o texgen texgen.c -framework GLUT -framework OpenGL
 */

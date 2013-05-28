@@ -1,6 +1,6 @@
 /* Create checkerboard texture
 based on Red Book, 6th edition
-** cc -o checker checker.c -lGLU -lGL -lXext -lX11 -lm
+** cc -o checker checker.c -lGLU -lGL -lglut -lXext -lX11 -lm
 ** On a Mac:
 ** cc -o checker checker.c -framework GLUT -framework OpenGL
 */

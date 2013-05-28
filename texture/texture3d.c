@@ -4,7 +4,7 @@
  *  with different texture coordinates to obtain different
  *  "slices" of the 3D texture.
  *
- * cc -o texture3d texture3d.c -lGLU -lGL -lXext -lX11 -lm
+ * cc -o texture3d texture3d.c -lGLU -lGL -lglut -lXext -lX11 -lm
  * On a Mac:
  * cc -o texture3d texture3d.c -framework GLUT -framework OpenGL
  */
