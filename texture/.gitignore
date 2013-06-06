@@ -1,3 +1,5 @@
 checker
 texgen
 texture3d
+*.pro.user
+Debug/
