@@ -16,6 +16,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::loadTexture(){
     QString fileName = QFileDialog::getOpenFileName(this);
-    if (!fileName.isEmpty())
-          ui->panel->setTexture(fileName.toLatin1().constData());
+    if (!fileName.isEmpty()){
+        if(!fileName.endsWith(".tga", Qt::CaseInsensitive))
+            ui->panel->setTexture(fileName.toLatin1().constData());
+        else
+            ui->panel->setBumpMap(fileName.toLatin1().constData());
+    }
 }

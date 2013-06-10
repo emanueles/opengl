@@ -12,14 +12,17 @@ TARGET = TextureView
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
+SOURCES += texture.c \
+        tga.c\
+        main.cpp\
         mainwindow.cpp \
-    openglwidget.cpp \
-    texture.c
+        openglwidget.cpp
+
 
 HEADERS  += mainwindow.h \
     openglwidget.h \
-    texture.h
+    texture.h \
+    tga.h
 
 FORMS    += mainwindow.ui
 

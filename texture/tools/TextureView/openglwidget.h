@@ -9,6 +9,7 @@ class OpenGLWidget : public QGLWidget
 public:
     explicit OpenGLWidget(QWidget *parent = 0);
     void setTexture(const char *name);
+    void setBumpMap(const char *name);
 protected:
     void initializeGL();
     void resizeGL(int w, int h);

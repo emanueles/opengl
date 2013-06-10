@@ -1,4 +1,5 @@
 #include "openglwidget.h"
+
 #ifdef __APPLE__
     #include <GLUT/glut.h>
     #include <OpenGL/OpenGL.h>
@@ -10,6 +11,7 @@ extern "C"
 {
     unsigned * read_texture(const char *name, int *width, int *height, int *components);
     GLubyte* readPPM(char* filename, int* width, int* height);
+    unsigned * loadTGA(const char* filename, int* width, int* height, int* components);
 }
 
 OpenGLWidget::OpenGLWidget(QWidget *parent) :
@@ -79,3 +81,20 @@ void OpenGLWidget::setTexture(const char *name){
     this->loadedtext = true;
     this->updateGL();
 }
+
+void OpenGLWidget::setBumpMap(const char *name){
+    texture = loadTGA(name, &texture_w, &texture_h, &texture_c);
+    glGenTextures(1, &texName);
+    glBindTexture(GL_TEXTURE_2D, texName);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexImage2D(GL_TEXTURE_2D, 0, texture_c, texture_w, texture_h, 0, GL_RGB, GL_UNSIGNED_BYTE,
+                  texture);
+    this->loadedtext = true;
+    this->updateGL();
+}
+
