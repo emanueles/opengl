@@ -27,7 +27,7 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui
 
 mac: LIBS += -framework GLUT
-else:unix|win32: LIBS += -lGLUT
+else:unix|win32: LIBS += -lglut
 
 mac: LIBS += -framework OpenGL
 else:unix|win32: LIBS += -lGLU
